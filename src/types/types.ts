@@ -3,6 +3,12 @@ type Theme = {
   prefix: string;
   description: string;
   angle: number;
+  transform: string;
 };
 
-export type {Theme};
+type CircleState = {
+  angle: number;
+  item: number;
+};
+
+export type {Theme, CircleState};
