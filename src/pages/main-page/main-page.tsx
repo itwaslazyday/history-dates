@@ -1,4 +1,5 @@
 import Dates from '../../components/dates/dates';
+import './main-page.css';
 
 function Main (): JSX.Element {
 

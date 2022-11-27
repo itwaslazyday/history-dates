@@ -1,10 +1,17 @@
+.dates__circle {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
 .dates__themes-list {
   position: relative;
   width: 530px;
   height: 530px;
-  outline: 1px solid #42567A;
+  outline: 1px solid rgba(66, 86, 122, 0.2);
   border-radius: 50%;
-  /* opacity: 0.2; */
   transition: transform 2s ease-in-out;
 }
 
@@ -17,11 +24,11 @@
   width: 6px;
   height: 6px;
   line-height: 6px;
-  background-color: #42567A;
+  background-color: rgba(66, 86, 122, 1);
   border-radius: 50%;
   transform-origin: center center;
-  opacity: 1;
   cursor: pointer;
+  z-index: 0;
 }
 
 .dates__themes-item--tapped {
@@ -32,6 +39,7 @@
   line-height: 30px;
   font-size: inherit;
   transition: width 1s, height 1s, background-color 1s, transform 2s ease-in-out;
+  color: inherit;
 }
 
 .dates__themes-item:hover {
@@ -42,6 +50,7 @@
   line-height: 30px;
   font-size: inherit;
   transition: width 1s, height 1s, background-color 1s, transform 2s ease-in-out;
+  color: inherit;
 }
 
 .dates__themes-item--literature {
@@ -80,8 +89,9 @@
   width: 50px;
   text-align: left;
   top: 34%;
-  right: -30%;
+  /* right: -30%; */
   animation: showOutput 2s forwards;
+  color: inherit;
 }
 
 @keyframes showOutput {

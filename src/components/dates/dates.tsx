@@ -1,5 +1,4 @@
 import Circle from 'components/circle/circle';
-import { useState } from 'react';
 import './dates.css';
 
 function Dates (): JSX.Element {
@@ -7,7 +6,10 @@ function Dates (): JSX.Element {
   return (
     <div className='history__dates dates'>
       <h1 className='dates__title'>Исторические даты</h1>
-      <p className='dates__time-offcut'>2015 2022</p>
+      <div className='dates__time-offcut'>
+        <p className='dates__time-offcut-start'>2015</p>
+        <p className='dates__time-offcut-end'>2022</p>
+      </div>
       <Circle/>
     </div>
   );

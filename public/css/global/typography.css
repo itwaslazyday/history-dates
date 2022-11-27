@@ -6,8 +6,8 @@ body {
   line-height: 20px;
   min-width: var(--mobile-width);
   font-family: var(--font-family);
-  color: var(--color-text-main);
-  background-color: var(--color-backgrouund-grey);
+  color: var(--color-main);
+  /* background-color: var(--color-backgrouund-grey); */
 }
 
 a {
