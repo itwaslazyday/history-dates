@@ -1,0 +1,14 @@
+:root {
+  --mobile-width: 320px;
+  --mobile-width-only: 767px;
+  --tablet-width: 768px;
+  --desktop-width: 1280px;
+
+  --font-family: 'PT Sans', Arial, sans-serif;
+
+  --color-backgrouund-grey: #F5F5F5;
+  --color-header-title-pink: rgba(175, 47, 47, 0.15);
+  --color-border-grey: #E8E8E8;
+  --color-white: #ffffff;
+
+}
