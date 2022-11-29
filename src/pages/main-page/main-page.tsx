@@ -8,7 +8,7 @@ import './main-page.css';
 function Main (): JSX.Element {
   const [mainState, setMainState] = useState<MainState>({offcutId: offcuts[0].id, theme: 'literature', startYear: offcuts[0].start, endYear: offcuts[0].end});
 
-  console.log('mainState', mainState);
+  // console.log('mainState', mainState);
 
   return (
     <section className='history'>

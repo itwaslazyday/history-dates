@@ -4,7 +4,7 @@
 }
 
 .events__slide {
-  max-width: 320px;
+  max-width: 400px;
   text-align: left;
 }
 
@@ -27,6 +27,14 @@
   color: inherit;
 }
 
+.events .swiper {
+  position: static;
+}
+
+.events .swiper-wrapper {
+  gap: 80px;
+}
+
 .events .swiper-button-next,
 .events .swiper-button-prev {
   width: 40px;
@@ -38,7 +46,13 @@
 }
 
 .events .swiper-button-next {
-  right: -20px;
+  top: 25%;
+  right: 20px;
+}
+
+.events .swiper-button-prev {
+  top: 25%;
+  left: 20px;
 }
 
 .events .swiper-button-next::after,
