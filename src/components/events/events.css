@@ -1,0 +1,48 @@
+.events {
+  position: relative;
+  padding: 0 80px 104px;
+}
+
+.events__slide {
+  max-width: 320px;
+  text-align: left;
+}
+
+.events__slide-year {
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 120%;
+  text-transform: uppercase;
+  color: #3877EE;
+  margin-bottom: 15px;
+}
+
+.events__slide-text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: inherit;
+}
+
+.events .swiper-button-next,
+.events .swiper-button-prev {
+  width: 40px;
+  height: 40px;
+  background: var(--color-white);
+  box-shadow: 0px 0px 15px rgba(56, 119, 238, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.events .swiper-button-next {
+  right: -20px;
+}
+
+.events .swiper-button-next::after,
+.events .swiper-button-prev::after {
+  color: var(--color-main);
+  transform: scale(0.3);
+}

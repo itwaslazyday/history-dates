@@ -1,10 +1,17 @@
 import { themes } from 'const/const';
-import React, { useEffect, useRef, useState } from 'react';
-import {CircleState} from 'types/types';
+import { memo, useEffect, useRef, useState } from 'react';
+import {CircleState, MainState, Theme} from 'types/types';
 import './circle.css';
 
-function Circle (): JSX.Element {
-  const [circleState, setCircleState] = useState<CircleState>({angle: 0, item: 2});
+type CircleProps = {
+  mainState: MainState;
+  setMainState: (state: MainState) => void;
+};
+
+function Circle ({mainState, setMainState}: CircleProps): JSX.Element {
+  const currentTheme = themes.find((theme) => theme.id === mainState.offcutId) as Theme;
+
+  const [circleState, setCircleState] = useState<CircleState>({angle: 30, item: currentTheme.id});
 
   const prevAngle = useRef(circleState.angle);
   useEffect(() => {
@@ -12,11 +19,13 @@ function Circle (): JSX.Element {
   }, [circleState.angle]);
 
   const getCircleAngle = (item: number): void => {
-    const angle = themes.find((theme) => theme.id === item)?.angle as number;
+    const tappedTheme = themes.find((theme) => theme.id === item) as Theme;
+    const angle = tappedTheme.angle;
     const a = angle - circleState.angle;
     const b = a - 360;
     const minAngle = Math.abs(a) >= Math.abs(b) ? Math.min(a, b) : Math.max(a, b);
     setCircleState({...circleState, angle: minAngle + prevAngle.current, item: item});
+    setMainState({...mainState, theme: tappedTheme.prefix});
   };
 
   return (
@@ -42,5 +51,5 @@ function Circle (): JSX.Element {
   );
 }
 
-export default Circle;
+export default memo(Circle);
 
