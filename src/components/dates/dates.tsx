@@ -27,20 +27,22 @@ function Dates ({setMainState, mainState}: DatesProps): JSX.Element {
         <p className='dates__time-offcut-end'>{activeOffcut.end}</p>
       </div>
       <Circle mainState={mainState} setMainState={setMainState}/>
-      <span className='dates__offcut-counter'>{`0${mainState.offcutId}/06`}</span>
-      <div className='dates__offcut-controls'>
-        <button
-          className='dates__offcut-back slider-button'
-          disabled={mainState.offcutId === 1}
-          onClick={() => handleOffCutChange(mainState.offcutId - 1)}
-        >
-        </button>
-        <button
-          className='dates__offcut-forward slider-button'
-          disabled={mainState.offcutId === OFFCUT_LENGTH}
-          onClick={() => handleOffCutChange(mainState.offcutId + 1)}
-        >
-        </button>
+      <div className='dates__controls-wrapper'>
+        <span className='dates__offcut-counter'>{`0${mainState.offcutId}/06`}</span>
+        <div className='dates__offcut-controls'>
+          <button
+            className='dates__offcut-back slider-button'
+            disabled={mainState.offcutId === 1}
+            onClick={() => handleOffCutChange(mainState.offcutId - 1)}
+          >
+          </button>
+          <button
+            className='dates__offcut-forward slider-button'
+            disabled={mainState.offcutId === OFFCUT_LENGTH}
+            onClick={() => handleOffCutChange(mainState.offcutId + 1)}
+          >
+          </button>
+        </div>
       </div>
     </div>
   );

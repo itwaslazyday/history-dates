@@ -1,9 +1,8 @@
 html,
 body {
   font-style: normal;
-  font-weight: 200;
-  font-size: 15px;
-  line-height: 20px;
+  font-weight: 400;
+  font-size: 14px;
   min-width: var(--mobile-width);
   font-family: var(--font-family);
   color: var(--color-main);
@@ -18,5 +17,6 @@ a {
 @media (min-width: 768px) {
   body {
     font-size: 20px;
+    line-height: 30px;
   }
 }

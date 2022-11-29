@@ -1,5 +1,5 @@
 import { themes } from 'const/const';
-import { memo, useEffect, useRef, useState } from 'react';
+import React, { memo, useEffect, useRef, useState } from 'react';
 import {CircleState, MainState, Theme} from 'types/types';
 import './circle.css';
 
@@ -9,11 +9,19 @@ type CircleProps = {
 };
 
 function Circle ({mainState, setMainState}: CircleProps): JSX.Element {
-  const currentTheme = themes.find((theme) => theme.id === mainState.offcutId) as Theme;
+  const currentTheme = themes.find((theme) => theme.prefix === mainState.theme) as Theme;
+
+  console.log('mainState', mainState);
+  console.log('currentTheme', currentTheme);
 
   const [circleState, setCircleState] = useState<CircleState>({angle: 30, item: currentTheme.id});
 
   const prevAngle = useRef(circleState.angle);
+
+  useEffect(() => {
+    setCircleState({...circleState, angle: currentTheme.angle, item: currentTheme.id});
+  }, [currentTheme]);
+
   useEffect(() => {
     prevAngle.current = circleState.angle;
   }, [circleState.angle]);
@@ -28,26 +36,40 @@ function Circle ({mainState, setMainState}: CircleProps): JSX.Element {
     setMainState({...mainState, theme: tappedTheme.prefix});
   };
 
+  console.log('circleState', circleState);
+
   return (
-    <div className='dates__circle'>
-      <ul
-        className='dates__themes-list list-reset'
-        style={{transform: `rotate(${circleState.angle}deg)`}}
+    <React.Fragment>
+      <div className='dates__circle'>
+        <ul
+          className='dates__themes-list list-reset'
+          style={{transform: `rotate(${circleState.angle}deg)`}}
+        >
+          {themes.map((theme) => (
+            <li
+              key={theme.id}
+              className={`dates__themes-item dates__themes-item--${theme.prefix}
+                ${theme.id === circleState.item ? 'dates__themes-item--tapped' : ''}`}
+              onClick={(evt) => getCircleAngle(Number(evt.currentTarget.innerText))}
+              style={{transform: `translate(${theme.transform}) rotate(${-circleState.angle}deg)`}}
+            >
+              {theme.id}
+            </li>
+          ))}
+        </ul>
+        <span className='dates__output'>{themes.find((theme) => circleState.item === theme.id)?.description}</span>
+      </div>
+      <select
+        className="dates__select"
+        onChange={(evt) => setMainState({...mainState, theme: evt.target.value})}
       >
         {themes.map((theme) => (
-          <li
-            key={theme.id}
-            className={`dates__themes-item dates__themes-item--${theme.prefix}
-              ${theme.id === circleState.item ? 'dates__themes-item--tapped' : ''}`}
-            onClick={(evt) => getCircleAngle(Number(evt.currentTarget.innerText))}
-            style={{transform: `translate(${theme.transform}) rotate(${-circleState.angle}deg)`}}
-          >
-            {theme.id}
-          </li>
+          <option key={theme.id} value={theme.prefix} selected={theme.prefix === mainState.theme}>
+            {theme.description}
+          </option>
         ))}
-      </ul>
-      <span className='dates__output'>{themes.find((theme) => circleState.item === theme.id)?.description}</span>
-    </div>
+      </select>
+    </React.Fragment>
   );
 }
 

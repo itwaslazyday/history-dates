@@ -1,10 +1,11 @@
 .events {
   position: relative;
-  padding: 0 80px 104px;
+  padding: 0 20px;
+  min-height: 275px;
 }
 
 .events__slide {
-  max-width: 400px;
+  min-width: 170px;
   text-align: left;
 }
 
@@ -12,7 +13,7 @@
   font-family: 'Bebas Neue';
   font-style: normal;
   font-weight: 400;
-  font-size: 25px;
+  font-size: 16px;
   line-height: 120%;
   text-transform: uppercase;
   color: #3877EE;
@@ -22,17 +23,19 @@
 .events__slide-text {
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 14px;
+  line-height: 145%;
   color: inherit;
 }
 
 .events .swiper {
   position: static;
+  padding-top: 20px;
+  border-top: 1px solid #C7CDD9;
 }
 
 .events .swiper-wrapper {
-  gap: 80px;
+  gap: 25px;
 }
 
 .events .swiper-button-next,
@@ -59,4 +62,33 @@
 .events .swiper-button-prev::after {
   color: var(--color-main);
   transform: scale(0.3);
+}
+
+@media (min-width: 768px) {
+  .events {
+    padding: 0 80px 104px;
+    min-height: auto;
+  }
+
+  .events__slide {
+    max-width: 400px;
+  }
+
+  .events__slide-year {
+    font-size: 25px;
+  }
+
+  .events__slide-text {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .events .swiper {
+    padding-top: 0;
+    border: none;
+  }
+
+  .events .swiper-wrapper {
+    gap: 80px;
+  }
 }

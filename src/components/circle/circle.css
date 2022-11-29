@@ -1,109 +1,132 @@
 .dates__circle {
-  position: absolute;
-  top: 62%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 0;
+  display: none;
 }
 
-.dates__themes-list {
-  position: relative;
-  width: 530px;
-  height: 530px;
-  outline: 1px solid rgba(66, 86, 122, 0.2);
-  border-radius: 50%;
-  transition: transform 2s ease-in-out;
-}
-
-.dates__themes-item {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0;
-  width: 6px;
-  height: 6px;
-  line-height: 6px;
-  background-color: rgba(66, 86, 122, 1);
-  border-radius: 50%;
-  transform-origin: center center;
-  cursor: pointer;
-  z-index: 0;
-}
-
-.dates__themes-item--tapped {
-  width: 56px;
-  height: 56px;
-  background: #F4F5F9;
-  border: 1px solid rgba(48, 62, 88, 0.5);
-  line-height: 30px;
-  font-size: inherit;
-  transition: width 1s, height 1s, background-color 1s, transform 2s ease-in-out;
-  color: inherit;
-}
-
-.dates__themes-item:hover {
-  width: 56px;
-  height: 56px;
-  background: #F4F5F9;
-  border: 1px solid rgba(48, 62, 88, 0.5);
-  line-height: 30px;
-  font-size: inherit;
-  transition: width 1s, height 1s, background-color 1s, transform 2s ease-in-out;
-  color: inherit;
-}
-
-.dates__themes-item--literature {
-  top: 0;
-  right: 50%;
-}
-
-.dates__themes-item--cinema {
-  top: 25%;
-  right: 6.7%;
-}
-
-.dates__themes-item--science {
-  bottom: 25%;
-  right: 6.7%;
-}
-
-.dates__themes-item--persons {
-  bottom: 0%;
-  right: 50%;
-}
-
-.dates__themes-item--music {
-  bottom: 25%;
-  left: 6.7%;
-}
-
-.dates__themes-item--sport {
-  top: 25%;
-  left: 6.7%;
-}
-
-.dates__output {
+.dates__select {
   display: block;
-  position: absolute;
-  width: 50px;
-  text-align: left;
-  top: 3%;
-  right: 5%;
-  font-family: inherit;
-  font-style: normal;
+  background-color: transparent;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 14px;
+  line-height: 20px;
   animation: showOutput 2s forwards;
   color: inherit;
+  border: none;
+  margin-bottom: 17px;
 }
 
-@keyframes showOutput {
-  0%, 50% {
-    opacity: 0;
+@media (min-width: 768px) {
+  .dates__circle {
+    display: block;
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
   }
-  100% {
-    opacity: 1;
+
+  .dates__select {
+    display: none;
+  }
+
+  .dates__themes-list {
+    position: relative;
+    width: 530px;
+    height: 530px;
+    outline: 1px solid rgba(66, 86, 122, 0.2);
+    border-radius: 50%;
+    transition: transform 2s ease-in-out;
+  }
+
+  .dates__themes-item {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0;
+    width: 6px;
+    height: 6px;
+    line-height: 6px;
+    background-color: rgba(66, 86, 122, 1);
+    border-radius: 50%;
+    transform-origin: center center;
+    cursor: pointer;
+    z-index: 0;
+  }
+
+  .dates__themes-item--tapped {
+    width: 56px;
+    height: 56px;
+    background: #F4F5F9;
+    border: 1px solid rgba(48, 62, 88, 0.5);
+    line-height: 30px;
+    font-size: inherit;
+    transition: width 1s, height 1s, background-color 1s, transform 2s ease-in-out;
+    color: inherit;
+  }
+
+  .dates__themes-item:hover {
+    width: 56px;
+    height: 56px;
+    background: #F4F5F9;
+    border: 1px solid rgba(48, 62, 88, 0.5);
+    line-height: 30px;
+    font-size: inherit;
+    transition: width 1s, height 1s, background-color 1s, transform 2s ease-in-out;
+    color: inherit;
+  }
+
+  .dates__themes-item--literature {
+    top: 0;
+    right: 50%;
+  }
+
+  .dates__themes-item--cinema {
+    top: 25%;
+    right: 6.7%;
+  }
+
+  .dates__themes-item--science {
+    bottom: 25%;
+    right: 6.7%;
+  }
+
+  .dates__themes-item--persons {
+    bottom: 0%;
+    right: 50%;
+  }
+
+  .dates__themes-item--music {
+    bottom: 25%;
+    left: 6.7%;
+  }
+
+  .dates__themes-item--sport {
+    top: 25%;
+    left: 6.7%;
+  }
+
+  .dates__output {
+    display: block;
+    position: absolute;
+    width: 50px;
+    text-align: left;
+    top: 3%;
+    right: 5%;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    animation: showOutput 2s forwards;
+    color: inherit;
+  }
+
+  @keyframes showOutput {
+    0%, 50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 }

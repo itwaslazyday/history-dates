@@ -86,15 +86,15 @@ const events: EventTheme[] = [
     eventList: [
       {
         year: 1905,
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae consequat massa, nec scelerisque ligula.'
+        description: 'А'
       },
       {
         year: 1910,
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae consequat massa, nec scelerisque ligula.'
+        description: 'Б'
       },
       {
         year: 1915,
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae consequat massa, nec scelerisque ligula.'
+        description: 'В'
       }
     ]
   },
