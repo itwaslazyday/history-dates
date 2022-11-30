@@ -38,7 +38,7 @@ function Events ({mainState}: EventsProps): JSX.Element {
             slidesOffsetAfter: 80,
           },
           768: {
-            slidesOffsetAfter: 700,
+            slidesOffsetAfter: 795,
           },
         }}
         speed={500}

@@ -35,10 +35,6 @@
   border-top: 1px solid #C7CDD9;
 }
 
-.events .swiper-wrapper {
-  /* gap: 25px; */
-}
-
 .events .swiper-button-next,
 .events .swiper-button-prev {
   visibility: hidden;
@@ -94,10 +90,6 @@
   .events .swiper {
     padding-top: 0;
     border: none;
-  }
-
-  .events .swiper-wrapper {
-    /* gap: 80px; */
   }
 
   .events .swiper-button-next,

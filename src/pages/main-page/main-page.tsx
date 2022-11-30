@@ -6,9 +6,14 @@ import Events from '../../components/events/events';
 import './main-page.css';
 
 function Main (): JSX.Element {
-  const [mainState, setMainState] = useState<MainState>({offcutId: offcuts[0].id, theme: 'literature', startYear: offcuts[0].start, endYear: offcuts[0].end});
-
-  // console.log('mainState', mainState);
+  const [mainState, setMainState] = useState<MainState>({
+    offcutId: offcuts[0].id,
+    theme: 'literature',
+    startYear: offcuts[0].start,
+    endYear: offcuts[0].end,
+    prevStartYear: offcuts[0].start,
+    prevEndYear: offcuts[0].end
+  });
 
   return (
     <section className='history'>

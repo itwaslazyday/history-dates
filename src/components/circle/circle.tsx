@@ -11,9 +11,6 @@ type CircleProps = {
 function Circle ({mainState, setMainState}: CircleProps): JSX.Element {
   const currentTheme = themes.find((theme) => theme.prefix === mainState.theme) as Theme;
 
-  console.log('mainState', mainState);
-  console.log('currentTheme', currentTheme);
-
   const [circleState, setCircleState] = useState<CircleState>({angle: 30, item: currentTheme.id});
 
   const prevAngle = useRef(circleState.angle);
@@ -33,10 +30,12 @@ function Circle ({mainState, setMainState}: CircleProps): JSX.Element {
     const b = a - 360;
     const minAngle = Math.abs(a) >= Math.abs(b) ? Math.min(a, b) : Math.max(a, b);
     setCircleState({...circleState, angle: minAngle + prevAngle.current, item: item});
-    setMainState({...mainState, theme: tappedTheme.prefix});
+    setMainState({...mainState,
+      theme: tappedTheme.prefix,
+      prevStartYear: mainState.startYear,
+      prevEndYear: mainState.endYear
+    });
   };
-
-  console.log('circleState', circleState);
 
   return (
     <React.Fragment>
@@ -61,7 +60,11 @@ function Circle ({mainState, setMainState}: CircleProps): JSX.Element {
       </div>
       <select
         className="dates__select"
-        onChange={(evt) => setMainState({...mainState, theme: evt.target.value})}
+        onChange={(evt) => setMainState({...mainState,
+          theme: evt.target.value,
+          prevStartYear: mainState.startYear,
+          prevEndYear: mainState.endYear
+        })}
         value={mainState.theme}
       >
         {themes.map((theme) => (

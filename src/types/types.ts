@@ -28,6 +28,8 @@ type MainState = {
   theme: string;
   startYear: number;
   endYear: number;
+  prevStartYear: number;
+  prevEndYear: number;
 };
 
 export type {Theme, CircleState, Offcut, EventTheme, MainState};
