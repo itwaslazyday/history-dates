@@ -62,9 +62,10 @@ function Circle ({mainState, setMainState}: CircleProps): JSX.Element {
       <select
         className="dates__select"
         onChange={(evt) => setMainState({...mainState, theme: evt.target.value})}
+        value={mainState.theme}
       >
         {themes.map((theme) => (
-          <option key={theme.id} value={theme.prefix} selected={theme.prefix === mainState.theme}>
+          <option key={theme.id} value={theme.prefix}>
             {theme.description}
           </option>
         ))}

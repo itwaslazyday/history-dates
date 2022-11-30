@@ -1,12 +1,13 @@
 .events {
   position: relative;
-  padding: 0 20px;
+  padding: 0 20px 64px;
   min-height: 275px;
 }
 
 .events__slide {
-  min-width: 170px;
+  max-width: 170px;
   text-align: left;
+  margin-right: 25px;
 }
 
 .events__slide-year {
@@ -35,33 +36,39 @@
 }
 
 .events .swiper-wrapper {
-  gap: 25px;
+  /* gap: 25px; */
 }
 
 .events .swiper-button-next,
 .events .swiper-button-prev {
-  width: 40px;
-  height: 40px;
-  background: var(--color-white);
-  box-shadow: 0px 0px 15px rgba(56, 119, 238, 0.1);
-  border-radius: 50%;
-  cursor: pointer;
+  visibility: hidden;
 }
 
-.events .swiper-button-next {
-  top: 25%;
-  right: 20px;
+.events .swiper-slide {
+  opacity: 0.4;
 }
 
-.events .swiper-button-prev {
-  top: 25%;
-  left: 20px;
+.events .swiper-slide-active {
+  opacity: 1;
 }
 
-.events .swiper-button-next::after,
-.events .swiper-button-prev::after {
-  color: var(--color-main);
-  transform: scale(0.3);
+.events .events__pagination-wrapper.swiper-pagination-horizontal {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: auto;
+  bottom: 32px;
+}
+
+.events__pagination-wrapper .custom-bullet {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-main);
+  opacity: 0.4;
+}
+
+.events__pagination-wrapper .custom-bullet-active {
+  opacity: 1;
 }
 
 @media (min-width: 768px) {
@@ -72,6 +79,7 @@
 
   .events__slide {
     max-width: 400px;
+    margin-right: 80px;
   }
 
   .events__slide-year {
@@ -89,6 +97,37 @@
   }
 
   .events .swiper-wrapper {
-    gap: 80px;
+    /* gap: 80px; */
+  }
+
+  .events .swiper-button-next,
+  .events .swiper-button-prev {
+    visibility: inherit;
+    width: 40px;
+    height: 40px;
+    background: var(--color-white);
+    box-shadow: 0px 0px 15px rgba(56, 119, 238, 0.1);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .events .swiper-button-next {
+    top: 25%;
+    right: 20px;
+  }
+
+  .events .swiper-button-prev {
+    top: 25%;
+    left: 20px;
+  }
+
+  .events .swiper-button-next::after,
+  .events .swiper-button-prev::after {
+    color: var(--color-main);
+    transform: scale(0.3);
+  }
+
+  .events__pagination-wrapper {
+    display: none;
   }
 }
