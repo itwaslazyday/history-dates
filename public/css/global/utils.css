@@ -8,7 +8,7 @@
 
 .container {
   margin: 0 auto;
-  max-width: var(--mobile-width);
+  min-width: var(--mobile-width);
 }
 
 .link-reset {
