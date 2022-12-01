@@ -122,4 +122,8 @@
   .events__pagination-wrapper {
     display: none;
   }
+
+  .events .swiper-slide {
+    opacity: 1;
+  }
 }

@@ -42,37 +42,50 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0;
-    width: 6px;
-    height: 6px;
-    line-height: 6px;
-    background-color: rgba(66, 86, 122, 1);
+    font-size: inherit;
+    width: 56px;
+    height: 56px;
+    line-height: 30px;
+    background-color: transparent;
     border-radius: 50%;
+    border: 1px solid transparent;
     transform-origin: center center;
     cursor: pointer;
     z-index: 0;
+    color: transparent;
+  }
+
+  .dates__themes-item:not(.dates__themes-item--tapped)::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: rgba(66, 86, 122, 1);
+    z-index: 1;
+    border-radius: 50%;
+    transition: width 0.5s, height 0.5s, background-color 0.5s ease-in-out;
   }
 
   .dates__themes-item--tapped {
-    width: 56px;
-    height: 56px;
-    background: #F4F5F9;
     border: 1px solid rgba(48, 62, 88, 0.5);
-    line-height: 30px;
-    font-size: inherit;
-    transition: width 1s, height 1s, background-color 1s, transform 2s ease-in-out;
     color: inherit;
+    background: #F4F5F9;
+    pointer-events: none;
+    transition: transform 2s ease-in-out;
   }
 
   .dates__themes-item:hover {
-    width: 56px;
-    height: 56px;
-    background: #F4F5F9;
     border: 1px solid rgba(48, 62, 88, 0.5);
-    line-height: 30px;
-    font-size: inherit;
-    transition: width 1s, height 1s, background-color 1s, transform 2s ease-in-out;
     color: inherit;
+    background: #F4F5F9;
+    transition: color 1s, border 2s, background-color 1s, transform 2s ease-in-out;
+  }
+
+  .dates__themes-item:hover::after {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    transition: width 0.5s, height 0.5s, background-color 0.5s ease-in-out;
   }
 
   .dates__themes-item--literature {
@@ -100,7 +113,7 @@
     left: 6.7%;
   }
 
-  .dates__themes-item--sport {
+  .dates__themes-item--tragedy {
     top: 25%;
     left: 6.7%;
   }
