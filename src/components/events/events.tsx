@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {Navigation, Pagination} from 'swiper';
-import {events} from '../../const/const';
+import {events} from '../../mock/mock';
 import './events.css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
