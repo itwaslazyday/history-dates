@@ -40,14 +40,6 @@
   visibility: hidden;
 }
 
-.events .swiper-slide {
-  opacity: 0.4;
-}
-
-.events .swiper-slide-active {
-  opacity: 1;
-}
-
 .events .events__pagination-wrapper.swiper-pagination-horizontal {
   position: absolute;
   left: 50%;

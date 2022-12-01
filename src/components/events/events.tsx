@@ -32,17 +32,9 @@ function Events ({mainState}: EventsProps): JSX.Element {
           }
         }
         slidesPerView={'auto'}
-        slidesOffsetAfter={80}
-        breakpoints={{
-          320: {
-            slidesOffsetAfter: 80,
-          },
-          768: {
-            slidesOffsetAfter: 790,
-          },
-        }}
         speed={500}
         grabCursor
+        mousewheel
       >
         {filteredByOffCut.map((event) => (
           <SwiperSlide
