@@ -19,7 +19,7 @@ const themes: Theme[] = [
     id: 3,
     prefix: 'science',
     description: 'Наука',
-    angle: 270,
+    angle: -90,
     transform: '50%, 50%'
   },
   {
